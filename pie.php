@@ -7,23 +7,47 @@
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        ntegrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
       
         
     </head>
     <body>
     
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo"></p>
+    <p id="demo"></p>
+    <p id="demo"></p>
+    <p id="demo"></p>
+    <script>
+        
+    var text = '{ "chart1" : [' +
+    '{ "value":"10000"},' +
+    '{ "value1":"20000"},' +
+    '{ "value":"30000"},' +
+    '{ "value":"40000"},' +
+    '{ "value":"50000"},' +
+    '{ "value":"60000"},' +
+    '{ "value":"70000"},' +
+    '{ "value":"80000"} ]}';
+        
+        obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML =
+        obj.chart1[0].value;
+        
+        obj1 = JSON.parse(text);
+        document.getElementById("demo1").innerHTML =
+        obj1.chart1[1].value;
+        
+        obj.chart1[2].value;
+        
+        obj.chart1[3].value;
+        obj.chart1[4].value;
+
+    </script>
+    
           
-        <div id="container" >
+        <div id="container" style="float:right;">
             <div class="row">
                 <div = "col-sm-6 col-md-6">
                     <div id="con1"></div>
@@ -49,26 +73,23 @@
         </div>
     
     
+    
+    
     <script>
     
     
-     var one = 43934;
-     var two = 57177;
-     var three = 69658;
+    var i = 0;
+    var x = 10000;
     
    Highcharts.chart('con1', {
 
     title: {
-        text: 'Solar Employment Growth by Sector, 2010-2016'
-    },
-
-    subtitle: {
-        text: 'Source: thesolarfoundation.com'
+        text: 'Project'
     },
 
     yAxis: {
         title: {
-            text: 'Number of Employees'
+            text: 'subject'
         }
     },
     legend: {
@@ -86,9 +107,12 @@
         }
     },
 
+
+
+
     series: [{
         name: 'Installation',
-        data: [, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        data: [i, 52503, 57177, 69658, x, 119931, 137133, 150000]
     }, {
         name: 'Manufacturing',
         data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
